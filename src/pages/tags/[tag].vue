@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { getArticlesTags, getParams, paginateData } from '~/data'
+import { getTags, getParams, paginateData } from '~/data'
 import { slug, limitString } from '~/utils'
 
 const paramsTag: any = getParams('tag')
 
 // Get tags paginate data
 const currentPage = ref<number>(1)
-const tags = getArticlesTags([paramsTag])
+const tags = getTags([paramsTag])
 const dataTags = computed(() => {
   const paginate = paginateData({
-    articles: tags,
+    posts: tags,
     currentPage: currentPage.value,
     pageSize: 3
   })
@@ -32,13 +32,13 @@ const clickEndPage = () => {
 <template>
   <div class="flex flex-col flex-wrap mb-2 px-4 lg:px-0">
     <h1
-      class="text-3xl text-elucidator-700 dark:text-dark-repulser-400 font-bold"
+      class="text-3xl text-bittersweet-700 dark:text-orient-400 font-bold"
     >Article with tags {{ paramsTag }} ({{ tags.length }})</h1>
     <div class="flex flex-col flex-wrap mb-2">
       <div
         class="mx-auto grid inline-grid gap-4 py-10 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2"
       >
-        <Article
+        <Card
           v-for="(data,i) in dataTags.listArticles"
           :key="i"
           :image="data.meta.frontmatter.thumbnail"

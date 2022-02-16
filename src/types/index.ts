@@ -29,7 +29,7 @@ export interface RelatedArticles {
 }
 
 export interface PaginateData {
-  articles: Array<unknown>
+  posts: Array<unknown>
   currentPage: number
   pageSize: number
 }

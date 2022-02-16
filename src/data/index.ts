@@ -14,8 +14,8 @@ export const getParams = (value: string) => {
   return router.currentRoute.value.params[value]
 }
 
-// Filter data routes to get the articles data and limit as needed
-export const getArticles = (limit?: number) => {
+// Filter data routes to get the writings data and limit as needed
+export const getPosts = (limit?: number) => {
   const isPosts = getDataRoutes()
     .filter((data) => Object.keys(data.meta).length !== 0)
     .slice(0, limit)
@@ -26,59 +26,30 @@ export const getArticles = (limit?: number) => {
   return isPosts
 }
 
-// Get the latest article
-export const latestArticle = () => {
-  const frontmatter = getDataRoutes()
-    .filter((data) => data.meta.frontmatter !== undefined)
-    .map((data) => data.meta.frontmatter)
-    .sort((a, b) => +new Date(b.date) - +new Date(a.date))
-  const latestPost: unknown = frontmatter[0]
-  return latestPost
-}
+export const getWritings = () => getPosts().filter((data) => data.meta.frontmatter.writing)
+
+export const getProjects = () => getPosts().filter((data) => !data.meta.frontmatter.writing)
+
+export const latestWriting = () => getWritings()[0].meta.frontmatter
+
+export const latestProject = () => getProjects()[0].meta.frontmatter
 
 // Filter data to get specific articles based on tags
-export const getArticlesTags = (tags: Array<string>) => {
-  const isPosts = getDataRoutes().filter(
-    (data) => Object.keys(data.meta).length !== 0,
-  )
-  const filter = isPosts.filter((tag: any) =>
+export const getTags = (tags: Array<string>) => {
+  const filter = getPosts().filter((tag: any) =>
     tags.every((filter) => tag.meta.frontmatter.tags.includes(filter)),
-  )
-  return filter
-}
-
-// Filter data to get data of search
-export const getArticlesSearch = (tags: Array<string>) => {
-  const isPosts = getDataRoutes().filter(
-    (data) => Object.keys(data.meta).length !== 0,
-  )
-  const filter = isPosts.filter((tag: any) =>
-    tags.every((filter) => tag.meta.frontmatter.name.includes(filter)),
-  )
-  return filter
-}
-
-// Filter data to get related articles data
-export const getRelatedArticles = ({ limit, tags, name }: RelatedArticles) => {
-  const isPosts = getDataRoutes()
-    .filter((data) => Object.keys(data.meta).length !== 0)
-    .filter((data: any) => data.meta.frontmatter.name !== name)
-    .slice(0, limit)
-  const filter = isPosts.filter((tag: any) =>
-    tags.some((filter) => tag.meta.frontmatter.tags.includes(filter)),
   )
   return filter
 }
 
 // Filter paginate data
 export const paginateData = ({
-  articles,
+  posts,
   currentPage,
   pageSize,
 }: PaginateData) => {
-  const getArticles = articles
   const { startPage, endPage, startIndex, endIndex } = usePaginate({
-    totalItems: getArticles.length,
+    totalItems: posts.length,
     currentPage: currentPage,
     pageSize: pageSize,
   })
@@ -89,11 +60,11 @@ export const paginateData = ({
     (value) => value > startPage && value < endPage,
   )
 
-  const listArticles = getArticles.slice(startIndex, endIndex + 1)
+  const listPosts = posts.slice(startIndex, endIndex + 1)
   return {
     startPage,
     mid,
     endPage,
-    listArticles,
+    listPosts,
   }
 }

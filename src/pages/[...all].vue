@@ -4,7 +4,7 @@ console.log('not found')
 
 <template>
   <div
-    class="flex flex-wrap flex-col items-center text-elucidator-700 dark:text-dark-repulser-400 font-bold text-center mt-16"
+    class="flex flex-wrap flex-col items-center text-bittersweet-700 dark:text-orient-400 font-bold text-center mt-16"
   >
     <carbon-warning-alt-filled class="text-5xl mb-5" />
     <h1 class="text-3xl">404 Page not found</h1>
