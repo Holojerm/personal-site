@@ -12,32 +12,30 @@ export default defineConfig({
     },
     extend: {
       colors: {
-        // The colors was inspired from kirito's elucidator sword color
-        elucidator: {
-          "50": "#f6f7f9",
-          "100": "#edeff2",
-          "200": "#e1e4ea",
-          "300": "#c3c9d5",
-          "400": "#a5adc0",
-          "500": "#828da6",
-          "600": "#63708c",
-          "700": "#4e586e",
-          "800": "#3f475a",
-          "900": "#313745",
+        bittersweet: {
+          '50': '#fff8f7', 
+          '100': '#fff1ef', 
+          '200': '#ffdbd8', 
+          '300': '#ffc5c0', 
+          '400': '#ff9a90', 
+          '500': '#ff6f61', 
+          '600': '#e66457', 
+          '700': '#bf5349', 
+          '800': '#99433a', 
+          '900': '#7d3630'
         },
-        // The colors was inspired from kirito's dark repulser sword color
-        "dark-repulser": {
-          "50": "#f1f9f8",
-          "100": "#f1f9f8",
-          "200": "#cceae7",
-          "300": "#9ad6cf",
-          "400": "#63bfb5",
-          "500": "#419f94",
-          "600": "#347f76",
-          "700": "#28625b",
-          "800": "#21504a",
-          "900": "#1f4c47",
-        },
+        orient: {
+          '50': '#f2f8fa', 
+          '100': '#e6f0f4', 
+          '200': '#bfdae4', 
+          '300': '#99c3d4', 
+          '400': '#4d96b4', 
+          '500': '#006994', 
+          '600': '#005f85', 
+          '700': '#004f6f', 
+          '800': '#003f59', 
+          '900': '#003349'
+        }
       },
     },
   },

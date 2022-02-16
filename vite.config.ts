@@ -76,8 +76,12 @@ export default defineConfig({
           baseRoute: "",
         },
         {
-          dir: "posts",
-          baseRoute: "posts",
+          dir: "writings",
+          baseRoute: "writings",
+        },
+        {
+          dir: "projects",
+          baseRoute: "projects",
         },
       ],
       extensions: ["vue", "md"],
@@ -119,29 +123,10 @@ export default defineConfig({
     VitePWA({
       includeAssets: ["favicon.ico", "robots.txt"],
       manifest: {
-        // You can change this name into your own
-        name: "Elucidator Blog Starter",
-        short_name: "Elucidator",
+        name: "Jeremy Ettlinger | Human",
+        short_name: "Je",
         description: "A blog starter with Vite.js",
-        theme_color: "#347f76",
-        icons: [
-          {
-            src: "/pwa-assets/192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "/pwa-assets/512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-          {
-            src: "/pwa-assets/512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "any maskable",
-          },
-        ],
+        theme_color: "#ff6f61",
       },
     }),
     
