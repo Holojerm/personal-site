@@ -18,7 +18,7 @@
         Submit
       </button>
     </form>
-    <div class="flex flex-auto w-full mt-10">
+    <div class="flex flex-auto w-full my-10">
       <a class="link" href="https://twitter.com/holojerm">
         <carbon-logo-twitter class="icon" />
       </a>

@@ -46,7 +46,7 @@ h2 {
 }
 
 p, ul {
-  @apply mb-2 align-baseline text-justify w-200 mx-auto px-4;
+  @apply mb-2 align-baseline text-justify max-w-200 w-full mx-auto px-4;
 }
 
 ul {
