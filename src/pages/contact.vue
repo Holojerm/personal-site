@@ -1,6 +1,6 @@
 <template>
   <div class="px-10 text-bittersweet-700 dark:text-orient-400 max-w-180 m-auto">
-    <h1 class="text-bittersweet-700 dark:text-orient-400 font-bold">Contact Me!</h1>
+    <h1 class="font-bold">Contact Me!</h1>
     <form class="my-4 md:flex flex-col md:justify-between">
       <div class="flex flex-col">
         <label class="field-label" for="name">Name</label>
