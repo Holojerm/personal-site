@@ -12,6 +12,6 @@
       </div>
       <i><slot name="location" /></i>
     </div>
-    <p><slot /></p>
+    <p class="mt-2"><slot /></p>
   </div>
 </template>
