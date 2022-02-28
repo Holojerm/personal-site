@@ -13,7 +13,7 @@ const props =
       v-for="(data, i) in $props.tags"
       :key="i"
       :to="`/tags/${data.toLowerCase()}`"
-      class="text-bittersweet-400 p-1 text-xs bg-bittersweet-500 dark:bg-bittersweet-700 rounded-xl m-1"
+      class="text-bittersweet-400 dark:text-orient-200 p-1 text-xs bg-bittersweet-500 dark:bg-orient-500 rounded-xl m-1"
     >
       <span class="p-2 text-white dark:text-bittersweet-50">{{ capitalizeStr(data) }}</span>
     </router-link>

@@ -43,7 +43,7 @@ html.dark {
 }
 
 .article-body {
-  @apply text-bittersweet-800 dark:text-bittersweet-200;
+  @apply text-dark-100 dark:text-orient-100;
   @apply leading-relaxed;
 
   h1:hover .header-anchor,
@@ -62,7 +62,7 @@ html.dark {
   }
 
   p {
-    margin-top: 1.25rem;
+    margin-top: 0.5rem;
     margin-bottom: 1.25rem;
   }
 
