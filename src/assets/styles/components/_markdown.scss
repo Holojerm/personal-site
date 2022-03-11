@@ -68,6 +68,7 @@ html.dark {
 
   a {
     &:not(.table-of-contents) {
+      @apply text-bittersweet-600 dark:text-orient-400;
       font-weight: 600;
       transition: all 0.3s ease;
       &:hover {
